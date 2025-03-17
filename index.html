@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Image Template Builder</title>
+    <link rel="stylesheet" href="./src/output.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
+</head>
+
+<body class="bg-white w-full h-auto">
+    <div class="flex justify-center flex-col ">
+        <div id="imageSec" class="w-96 h-96 border collage-container">
+
+            <div class=" bg-[url(/assist/bgimg.png)] bg-cover bg-no-repeat w-96 h-96  overflow-hidden ">
+
+                <img id="image-container" src="./assist/Photo.png" alt="Draggable Image" class=" w-40 h-40  ">
+
+            </div>
+
+        </div>
+        <div class="">
+            <button id="download-btn">Download Collage</button>
+        </div>
+    </div>
+
+    <script src="./dist/script.js"></script>
+</body>
+
+</html>
