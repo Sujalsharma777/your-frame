@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Editor</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./src/output.css">`
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.0/fabric.min.js"></script>
 </head>
 
 <body class="bg-gray-100 flex items-center justify-center min-h-screen  ">
-    <div class="p-5 bg-white shadow-lg rounded-lg  overflow-hidden w-full max-w-4xl ">
+    <div class="p-5 bg-white shadow-lg rounded-lg  w-full max-w-4xl ">
         <canvas id="canvas" class="border w-full  h-auto"></canvas>
         <div class="mt-4 flex flex-wrap gap-2 justify-center md:justify-start">
             <button onclick="downloadImage('png')" class="px-4 py-2 bg-blue-500 text-white rounded">Download
@@ -26,11 +26,11 @@
         const canvas = new fabric.Canvas('canvas', {
             width: 500,
             height: 500
+
         });
 
         fabric.Image.fromURL('./assist/post.png', function (frontImg) {
             frontImg.set({
-
                 left: 0,
                 top: 0,
                 selectable: false,
@@ -39,6 +39,8 @@
             });
             canvas.add(frontImg);
             canvas.bringToFront(frontImg);
+            window.addEventListener('resize', render);
+            render()
         });
 
         fabric.Image.fromURL('./assist/Photo.png', function (backImg) {
